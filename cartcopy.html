@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--=============== BOXICONS ===============-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ==" crossorigin="anonymous" />
+    <!--=============== SWIPER CSS ===============-->
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+    <!--=============== CSS ===============-->
+     <link rel="stylesheet" href="assets/css/cart.css">
+
+    <title>Responsive e-commerce website - Crypticalcoder</title>
+</head>
+<body>
+    <video autoplay muted loop id="myVideo">
+        <source src="assets/img/back.mp4" type="video/mp4">
+      </video>
+    <!--=============== HEADER ===============-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="index.html" class="nav__logo">
+                <i class="bx bxs-shopping-bags nav_logo-icon"></i> e-shopper
+            </a>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="index.html" class="nav__link">Home</a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="shop.html" class="nav__link">Shop</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="about.html" class="nav__link">About</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="blog.html" class="nav__link">Blog</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="faq.html" class="nav__link">Faq's</a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="contact.html" class="nav__link">Contact</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="cartcopy.html" class="nav__link active-link">Cart</a>
+                    </li>
+                </ul>
+
+                <div class="nav__close" id="nav-close">
+                    <i class="bx bx-x"></i>
+                </div>
+            </div>
+
+            <div class="nav__btns">
+                <div class="login__toggle" id="login-button">
+                    <i class="bx bx-user"></i>
+                </div>
+
+                <div class="nav__shop" id="cart-shop">
+                    <i class="bx bx-shopping-bag"></i>
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="bx bx-grid-alt"></i>
+                </div>
+            </div>
+        </nav>
+        
+    </header>
+
+<br><br><br><br>
+
+    <!--=============== CART ===============-->
+    <div class="cart" id="cart">
+        
+    </div>
+
+    <!--=============== LOGIN ===============-->
+    <div class="login" id="login">
+        <i class="bx bx-x login__close" id="login-close"></i>
+        <h2 class="login__title-center" style="color: black; font-weight: bolder;">Login</h2>
+        <form action="" class="login__form grid">
+            <div class="login__content">
+                <label for="" class="login__label">Email</label>
+                <input type="email" class="login__input">
+            </div>
+
+            <div class="login__content">
+                <label for="" class="login__label">Password</label>
+                <input type="password" class="login__input">
+            </div>
+            
+            <div>
+                <a href="a" class="button" style="background-color: red;  color: white;border-radius: 5px; padding: 16px 30px 16px 30px;">Sign in</a>
+            </div>
+            <div>
+                <p class="signup">Not a member? <a href="registration.html" style="color: red;">Sign up now </a></p>
+            </div>
+        </form>
+    </div>
+
+    <!--=============== MAIN ===============-->
+    <h2 class="breadcrumb__title" style="font-size: 40px;color: black; "> Cart Page </h2>
+    <h3 class="breadcrumb__subtitle" style="font-size: 17px;">Home > <span style="color: red;">Cart Page</span></h3>
+        <!-- =============== CART =============== -->
+        
+            <div class="container-fluid">
+                <div class="row">
+                <div class="col-md-10 col-11 mx-auto">
+                <div class="row mt-5 gx-3">
+                <!-- left side div -->
+                <div class="col-md-12 col-lg-8 col-11 mx-auto main_cart mb-lg-0 mb-5 shadow">
+                <div class="card p-4">
+                <h2 class="py-4 font-weight-bold">Cart (2 items)</h2>
+                <div class="row">
+                <!-- cart images div -->
+                <div class="col-md-5 col-11 mx-auto bg-light d-flex justify-content-center align-items-center shadow product_img">
+                <img src="assets/img/cart-1.jpg" class="img-fluid" alt="cart img">
+                </div>   
+                <!-- cart product details -->
+                <div class="col-md-7 col-11 mx-auto px-4 mt-2">
+                <div class="row">
+                <!-- product name  -->
+                <div class="col-6 card-title">
+                <h1 class="mb-4 product_name">Blue Zara Shirt</h1>
+                <p class="mb-2">SHIRT - BLUE</p>
+                <p class="mb-2">COLOR: BLUE</p>
+                <p class="mb-3">SIZE: M</p>
+                </div>
+                <!-- quantity inc dec -->
+                <div class="col-6">
+                <ul class="pagination justify-content-end set_quantity">
+                <li class="page-item">
+                <button class="page-link " onclick="decreaseNumber('textbox','itemval')">
+                <i class="fas fa-minus"></i> </button>
+                </li>
+                <li class="page-item"><input type="text" name="" class="page-link" value="0" id="textbox" >
+                </li>
+                <li class="page-item">
+                <button class="page-link" onclick="increaseNumber('textbox','itemval')"> <i class="fas fa-plus"></i></button>
+                </li>
+                </ul>
+                </div>
+                </div>
+                <!-- //remover move and price -->
+                <div class="row">
+                <div class="col-8 d-flex justify-content-between remove_wish">
+                <p><i class="fas fa-trash-alt"></i> REMOVE ITEM</p>
+                <p><i class="fas fa-heart"></i>MOVE TO WISH LIST </p>
+                </div>
+                <div class="col-4 d-flex justify-content-end price_money">
+                <h3>$<span id="itemval">0.00 </span></h3>
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
+                <hr/>
+                <!-- 2nd cart product -->
+                <div class="card p-4">
+                <div class="row">
+                <!-- cart images div -->
+                <div class="col-md-5 col-11 mx-auto bg-light d-flex justify-content-center align-items-center shadow product_img">
+                <img src="assets/img/cart-2-.png" class="img-fluid" alt="cart img">
+                </div>
+                <!-- cart product details -->
+                <div class="col-md-7 col-11 mx-auto px-4 mt-2">
+                <div class="row">
+                <!-- product name  -->
+                <div class="col-6 card-title">
+                <h1 class="mb-4 product_name">Green Zara Shirt</h1>
+                <p class="mb-2">SHIRT - Green</p>
+                <p class="mb-2">COLOR: Green</p>
+                <p class="mb-3">SIZE: M</p>
+                </div>
+                <!-- quantity inc dec -->
+                <div class="col-6">
+                <ul class="pagination justify-content-end set_quantity">
+                <li class="page-item">
+                <button class="page-link " onclick="decreaseNumber('textbox1','itemval1')"> <i class="fas fa-minus"></i> </button>
+                </li>
+                <li class="page-item"><input type="text" name="" class="page-link" value="0" id="textbox1" >
+                </li>
+                <li class="page-item">
+                <button class="page-link" onclick="increaseNumber('textbox1','itemval1')"> <i class="fas fa-plus"></i></button>
+                </li>
+                </ul>
+                </div>
+                </div>
+                <!-- //remover move and price -->
+                <div class="row">
+                <div class="col-8 d-flex justify-content-between remove_wish">
+                <p><i class="fas fa-trash-alt"></i> REMOVE ITEM</p>
+                <p><i class="fas fa-heart"></i>MOVE TO WISH LIST </p>
+                </div>
+                <div class="col-4 d-flex justify-content-end price_money">
+                <h3>$<span id="itemval1">0.00 </span> </h3>
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
+                <!-- right side div -->
+                <div class="col-md-12 col-lg-4 col-11 mx-auto mt-lg-0 mt-md-5">
+                <div class="right_side p-3 shadow bg-white">
+                <h2 class="product_name mb-5">The Total Amount Of</h2>
+                <div class="price_indiv d-flex justify-content-between">
+                <p>Product amount</p>
+                <p>$<span id="product_total_amt">0.00</span></p>
+                </div>
+                <div class="price_indiv d-flex justify-content-between">
+                <p>Shipping Charge</p>
+                <p>$<span id="shipping_charge">50.0</span></p>
+                </div>
+                <hr />
+                <div class="total-amt d-flex justify-content-between font-weight-bold">
+                <p>The total amount of (including VAT)</p>
+                <p>$<span id="total_cart_amt">0.00</span></p>
+                </div>
+                <button class="btn btn-primary text-uppercase" style="background-color: red; border: none;">Checkout</button>
+                </div>
+                <!-- discount code part -->
+                <div class="discount_code mt-3 shadow">
+                <div class="card">
+                <div class="card-body">
+                <a class="d-flex justify-content-between" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                Add a discount code (optional)
+                <span><i class="fas fa-chevron-down pt-1"></i></span>
+                </a>
+                <div class="collapse" id="collapseExample">
+                <div class="mt-3">
+                <input type="text" name="" id="discount_code1" class="form-control font-weight-bold" placeholder="Enter the discount code">
+                <small id="error_trw" class="text-dark mt-3">code is thapa</small>
+                </div>
+                <button class="btn btn-primary btn-sm mt-3" onclick="discount_code()">Apply</button>
+                </div>
+                </div>
+                </div>
+                </div>
+                <!-- discount code ends -->
+                <div class="mt-3 shadow p-3 bg-white">
+                <div class="pt-4">
+                <h5 class="mb-4">Expected delivery date</h5>
+                <p>July 27th 2020 - July 29th 2020</p>
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
+        
+    
+
+    <!--=============== FOOTER ===============-->
+    <footer class="footer section">
+        <div class="footer__container container grid">
+            <!-- FOOTER CONTENT 1 -->
+            <div class="footer__content">
+                <a href="#" class="footer__logo">
+                    <i class="bx bxs-shopping-bags footer__logo-icon"></i>e-shopper
+                </a>
+
+                <p class="footer__description">Enjoy the biggest sale <br> of your life.</p>
+
+                <div class="footer__social">
+                    <a href="#" class="footer__social-link"><i class="bx bxl-facebook"></i></a>
+                    <a href="#" class="footer__social-link"><i class="bx bxl-instagram-alt"></i></a>
+                    <a href="#" class="footer__social-link"><i class="bx bxl-twitter"></i></a>
+                </div>
+            </div>
+             <!-- FOOTER CONTENT 2 -->
+             <div class="footer__content">
+                <h3 class="footer__title">About</h3>
+
+                <ul class="footer__links">
+                    <li><a href="#" class="footer__link">About Us</a></li>
+                    <li><a href="#" class="footer__link">Customer Support</a></li>
+                    <li><a href="#" class="footer__link">Support Center</a></li>
+                </ul>
+            </div>
+             <!-- FOOTER CONTENT 3 -->
+             <div class="footer__content">
+                <h3 class="footer__title">Our Services</h3>
+
+                <ul class="footer__links">
+                    <li><a href="#" class="footer__link">Shop</a></li>
+                    <li><a href="#" class="footer__link">Discounts</a></li>
+                    <li><a href="#" class="footer__link">Shipping mode</a></li>
+                </ul>
+            </div>
+             <!-- FOOTER CONTENT 4 -->
+             <div class="footer__content">
+                <h3 class="footer__title">Our company</h3>
+
+                <ul class="footer__links">
+                    <li><a href="#" class="footer__link">Register</a></li>
+                    <li><a href="#" class="footer__link">Contact Us</a></li>
+                    <li><a href="#" class="footer__link">About Us</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <span class="footer__copy">&#169; AnshGupta. All rights reserved</span>
+    </footer>
+
+    <!--=============== SCROLL UP ===============-->
+
+    <!--=============== STYLE SWITCHER ===============-->
+    
+    <!--=============== SWIPER JS ===============-->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+
+    <!--=============== JS ===============-->
+    <script src="assets/js/cart.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
