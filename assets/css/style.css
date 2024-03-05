@@ -177,7 +177,8 @@ input {
 .login__toggle,
 .nav__logo,
 .nav__toggle,
-.nav__shop {
+.nav__shop,
+.searchicon {
     color: var(--title-color);
 }
 
@@ -201,7 +202,8 @@ input {
 }
 .nav__toggle,
 .login__toggle,
-.nav__shop
+.nav__shop,
+.searchicon
 {
     font-size: 1.25rem;
     cursor: pointer;
@@ -259,6 +261,24 @@ input {
     height: 5px;
     background: var(--title-color);
     border-radius: 50%;
+}
+.search-bar-container{
+position: absolute;
+  /* top:100%; left: 0; right:0; */
+  top: 100%;
+  
+  padding:1.5rem 2rem;
+  background:white;
+  border-top: .1rem solid rgba(255,255,255,.2);
+ 
+  border-radius: 50px;
+  /* display: flex; */
+  align-items: center;
+  z-index: 1001;
+  display: none;
+  
+  transition: .3s;
+  /* clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); */
 }
 /*=============== MAIN ===============*/
 /*========== HOME SECTION ==========*/
@@ -592,9 +612,14 @@ input {
 
 .sidebar{
     margin-left: -100px;
-    padding: 1.8rem;
-    background-color: var(--container-color);
+   
+    /* background-color: var(--container-color); */
     border-radius: 1rem;
+}
+.sidebar>div{
+    padding: 1.8rem;
+    border-radius: 1rem;
+     background-color: var(--container-color);
 }
 
 .filter__title{
@@ -1152,7 +1177,9 @@ input {
 }
 /*=============== LOGIN ===============*/
 
-.login{
+.login
+ 
+{
     position: fixed;
     background-color: var(--body-color);
     z-index: var(--z-fixed);
@@ -1164,6 +1191,29 @@ input {
     padding: 3.5rem 2rem;
     transition: .4s;
 }
+
+.create
+ 
+{
+    position: fixed;
+    background-color: var(--body-color);
+    z-index: 500;
+    width: 420px;
+    box-shadow: -2px 0 4px var(--shadow);
+    height: 100%;
+    top: 0;
+    right: 0%;
+    translate: 100%;
+    padding: 3.5rem 2rem;
+    transition: .4s;
+}
+.closeSignup{
+    translate: 100%;
+}
+.openSignup {
+    translate:0%;
+}
+
 .login__title-center{
     font-size: var(--h2-font-size);
     text-align: center;
@@ -1206,7 +1256,6 @@ input {
     color: var(--title-color);
     font-size: var(--small-font-size);
     font-weight: var(--font-medium);
-
 }
 
 .signup a{
@@ -1216,6 +1265,10 @@ input {
 .show-login{
     right: 0;
 }
+.show-create{
+    right: 50%;
+}
+
 
 /*=============== CART ===============*/
 .cart{

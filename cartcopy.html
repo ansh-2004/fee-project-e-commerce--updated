@@ -61,6 +61,13 @@
             </div>
 
             <div class="nav__btns">
+                <div class="searchicon" id="searchicon">
+                    <i class="bx bx-search"></i>
+                    <form action="" class="search-bar-container" id="searchbox">
+                        <input type="search" id="search-bar" placeholder="search here...">
+                        <label for="search-bar" class="fas fa-search"></label>
+                    </form>
+                </div>
                 <div class="login__toggle" id="login-button">
                     <i class="bx bx-user"></i>
                 </div>
@@ -103,8 +110,44 @@
                 <a href="a" class="button" style="background-color: red;  color: white;border-radius: 5px; padding: 16px 30px 16px 30px;">Sign in</a>
             </div>
             <div>
-                <p class="signup">Not a member? <a href="registration.html" style="color: red;">Sign up now </a></p>
+                <p class="signup">Not a member? <a href="#" id="shift" style="color: red;">Sign up now </a></p>
             </div>
+        </form>
+    </div>
+
+    <div class="create" id="create">
+        <i class="bx bx-x login__close" id="signup-close"></i>
+        <h2 class="login__title-center">Create Account</h2>
+        <form action="" class="login__form grid">
+            <div class="login__content">
+                <label for="" class="login__label">Your Name</label>
+                <input type="text" class="login__input">
+            </div>
+
+
+            <div class="login__content">
+                <label for="" class="login__label">Email</label>
+                <input type="email" class="login__input">
+            </div>
+
+            <div class="login__content">
+                <label for="" class="login__label">Mobile No.</label>
+                <input type="number" class="login__input">
+            </div>
+
+            <div class="login__content">
+                <label for="" class="login__label">Password</label>
+                <input type="password" class="login__input">
+            </div>
+            <p style="margin-top: -20px; margin-left: 20px;"> Password must be atleast 6 characters.</p>
+            <p style="margin-left: 20px;"> To verify your number, we will send you a text message with a temporary code. Message and data rates may apply.</p>
+            <div>
+                <a href="a" class="button" style="color: white;">Sign up</a>
+            </div>
+            <div>
+                <p class="signup">Already have an account? <a href="#">Sign in  </a></p>
+            </div>
+            <p style="margin-left: 20px;">By creating an account, you agree to Amazon's Conditions of Use and Privacy Notice.</p>
         </form>
     </div>
 
@@ -324,5 +367,6 @@
     <!--=============== JS ===============-->
     <script src="assets/js/cart.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/products.js"></script>
 </body>
 </html>

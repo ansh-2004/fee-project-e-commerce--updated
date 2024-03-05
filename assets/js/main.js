@@ -45,13 +45,44 @@ const login = document.getElementById('login'),
       loginButton = document.getElementById('login-button'),
       loginClose = document.getElementById('login-close')
 
+const signup = document.getElementById("shift")
+//       signupButton = document.querySelector("signup-button")
+const searchbutton = document.getElementById('searchicon')
+const searchbar = document.getElementById('searchbox')
 /*===== LOGIN SHOW =====*/
 /* Validate if constant exists */
 if(loginButton){
   loginButton.addEventListener("click",() =>{
     login.classList.add('show-login')
+    
   })
 }
+
+if(searchbutton){
+  searchbutton.addEventListener("click",()=>{
+    document.getElementById("searchbox").style.display="block"
+    
+  })
+}
+
+if(signup){
+  signup.addEventListener("click",() =>{
+    document.getElementById("create").style.translate="0";
+  })
+}
+
+// const closeSignup = document.getElementById("signup-close");
+// closeSignup.addEventListener("click", () => {
+//   document.getElementById("create").style.translate="100%";
+// })
+
+const signupClose = document.getElementById("signup-close");
+// sighupClose.addEventListener("click", () => {
+//   signup.addEventListener("click",() =>{
+//     document.getElementById("create").style.translate="100%";
+//   })
+// })
+
 
 /*===== LOGIN HIDDEN =====*/
 /* Validate if constant exists */
@@ -59,6 +90,11 @@ if(loginButton){
 if(loginClose){
   loginClose.addEventListener("click",() =>{
     login.classList.remove('show-login')
+  })
+}
+if(signupClose){
+  signupClose.addEventListener("click",() =>{
+    create.style.display='none';
   })
 }
 /*=============== HOME SWIPER ===============*/
@@ -175,3 +211,12 @@ function themeColors(){
 }
 
 themeColors();
+
+// // show for search 
+// let search = document.getElementById('searchicon');
+// // let searchbox = document.getElementById('searchbox')
+// if(search){
+//   search.addEventListener("click",() =>{
+//     console.log('hlo ');
+//   })
+// }
