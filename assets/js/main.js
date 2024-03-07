@@ -65,6 +65,7 @@ if(searchbutton){
   })
 }
 
+
 if(signup){
   signup.addEventListener("click",() =>{
     document.getElementById("create").style.translate="0";
@@ -97,6 +98,7 @@ if(signupClose){
     create.style.display='none';
   })
 }
+
 /*=============== HOME SWIPER ===============*/
 var homeSwiper = new Swiper(".home-swiper", {
   spaceBetween: 30,
@@ -209,14 +211,259 @@ function themeColors(){
   }
   
 }
+// themeColors();
 
-themeColors();
+console.log('hlo');
 
-// // show for search 
-// let search = document.getElementById('searchicon');
-// // let searchbox = document.getElementById('searchbox')
-// if(search){
-//   search.addEventListener("click",() =>{
-//     console.log('hlo ');
-//   })
-// }
+
+
+// realtime login 
+
+document.addEventListener("DOMContentLoaded", function() {
+  const login = document.getElementById('login');
+  const loginButton = document.getElementById('buttonforlogin');
+  const loginClose = document.getElementById('login-close');
+  const signup = document.getElementById('shift');
+  const signupClose = document.getElementById('signup-close');
+  const create = document.getElementById('create');
+  const loginShift = document.getElementById('login-shift');
+  const signupButton = document.getElementById('signup-button');
+  const headerUser = document.getElementById('header-user');
+  const logoutButton = document.getElementById('logout-button');
+  
+  // Load users from localStorage or initialize an empty array if it doesn't exist
+  let users = JSON.parse(localStorage.getItem('users')) || [];
+  let currentUser = JSON.parse(localStorage.getItem('currentUser')) || {}; 
+
+  function saveUser(name,email, password) {
+    const newUser = { name,email, password };
+    users.push(newUser);
+    localStorage.setItem('users', JSON.stringify(users));
+  }
+
+  function loginWithEmailAndPassword(email, password) {
+
+    const foundUser = users.find(user => user.email === email && user.password === password);
+
+    // return !!foundUser; // Returns true if user is found, false otherwise
+    return foundUser;
+  }
+
+  function showLogin() {
+    login.classList.add('show-login');
+  }
+
+  function hideLogin() {
+    login.classList.remove('show-login');
+  }
+
+  function showSignup() {
+    create.classList.add('show-signup');
+  }
+
+  function hideSignup() {
+    create.classList.remove('show-signup');
+  }
+
+  function handleLogin() {
+    console.log('handlelogin');
+    const email = document.getElementById('login-email').value;
+    const password = document.getElementById('login-password').value;
+    const user = loginWithEmailAndPassword(email, password);
+  //   if (loginWithEmailAndPassword(email, password)) {
+  //     alert('Login successful');
+  //     // Redirect or perform actions after successful login
+  //   } else {
+  //     alert('Invalid email or password');
+  //   }
+  // }
+  if (user) {
+   
+    currentUser = user;
+    
+    localStorage.setItem('currentUser', JSON.stringify(currentUser));
+    headerUser.textContent = `Welcome, ${currentUser.name === undefined ? "" : currentUser.name}`;
+    alert('Login successful');
+    hideLogin();
+  } else {
+    alert('Invalid email or password');
+  }
+}
+
+
+  function handleSignup() {
+    console.log('handlesignup');
+    const name = document.getElementById('signup-name').value;
+    const email = document.getElementById('signup-email').value;
+    const password = document.getElementById('signup-password').value;
+    
+
+    // Basic validation
+    if (name && email && password) {
+      saveUser(name,email, password);
+      alert('Account created successfully');
+      hideSignup();
+    } else {
+      alert('Please fill in all fields');
+    }
+  }
+  function handleLogout() {
+    localStorage.removeItem('currentUser');
+    currentUser = {};
+    headerUser.textContent = "Welcome";
+  }
+
+  if (loginButton) {
+    loginButton.addEventListener("click", handleLogin);
+  }
+
+  if (loginClose) {
+    loginClose.addEventListener("click", hideLogin);
+  }
+
+  if (signup) {
+    signup.addEventListener("click", showSignup);
+  }
+
+  if (signupClose) {
+    signupClose.addEventListener("click", hideSignup);
+  }
+
+  if (loginShift) {
+    loginShift.addEventListener("click", hideSignup);
+  }
+
+  if (logoutButton) {
+    logoutButton.addEventListener("click", handleLogout);
+  }
+
+if (signupButton) {
+signupButton.addEventListener("click", handleSignup);
+}
+if (currentUser) {
+  headerUser.textContent = `Welcome, ${currentUser.name === undefined? "" : currentUser.name}`;
+  console.log(headerUser);
+}
+
+});
+
+
+// console.log('hlo');
+
+// document.addEventListener("DOMContentLoaded", function() {
+//   const check = document.getElementById("check")
+//   console.log("Login button: ", check);
+//   const login = document.getElementById('login');
+//   const loginButton = document.getElementById('buttonforlogin');
+  
+//   const loginClose = document.getElementById('login-close');
+//   const signup = document.getElementById('shift');
+//   const signupClose = document.getElementById('signup-close');
+//   const create = document.getElementById('create');
+//   const loginShift = document.getElementById('login-shift');
+//   const signupButton = document.getElementById('signup-button');
+//   const headerUser = document.getElementById('header-user');
+//   const logoutButton = document.getElementById('logout-button');
+  
+//   // Load users from localStorage or initialize an empty array if it doesn't exist
+//   let users = JSON.parse(localStorage.getItem('users')) || [];
+//   let currentUser = JSON.parse(localStorage.getItem('currentUser')) || {}; 
+
+//   function saveUser(name, email, password) {
+//     const newUser = { name, email, password };
+//     users.push(newUser);
+//     localStorage.setItem('users', JSON.stringify(users));
+//   }
+
+//   function loginWithEmailAndPassword(email, password) {
+//     const foundUser = users.find(user => user.email === email && user.password === password);
+//     return foundUser;
+//   }
+
+//   function showLogin() {
+//     login.classList.add('show-login');
+//   }
+
+//   function hideLogin() {
+//     login.classList.remove('show-login');
+//   }
+
+//   function showSignup() {
+//     create.classList.add('show-signup');
+//   }
+
+//   function hideSignup() {
+//     create.classList.remove('show-signup');
+//   }
+
+//   function handleLogin() {
+//     console.log('loginbutton clicked')
+//     const email = document.getElementById('login-email').value;
+//     const password = document.getElementById('login-password').value;
+//     const user = loginWithEmailAndPassword(email, password);
+
+//     if (user) {
+//       currentUser = user;
+//       localStorage.setItem('currentUser', JSON.stringify(currentUser));
+//       headerUser.textContent = `Welcome, ${currentUser.name}`;
+//       alert('Login successful');
+//       hideLogin();
+//     } else {
+//       alert('Invalid email or password');
+//     }
+//   }
+
+//   function handleSignup() {
+//     const name = document.getElementById('signup-name').value;
+//     const email = document.getElementById('signup-email').value;
+//     const password = document.getElementById('signup-password').value;
+
+//     if (name && email && password) {
+//       saveUser(name, email, password);
+//       alert('Account created successfully');
+//       hideSignup();
+//     } else {
+//       alert('Please fill in all fields');
+//     }
+//   }
+
+//   function handleLogout() {
+//     localStorage.removeItem('currentUser');
+//     currentUser = {};
+//     headerUser.textContent = "Welcome";
+//   }
+
+//   if (loginButton) {
+//     loginButton.addEventListener("click", () => console.log("Login button clicked."));
+//   }
+
+//   if (loginClose) {
+//     loginClose.addEventListener("click", hideLogin);
+//   }
+
+//   if (signup) {
+//     signup.addEventListener("click", showSignup);
+//   }
+
+//   if (signupClose) {
+//     signupClose.addEventListener("click", hideSignup);
+//   }
+
+//   if (loginShift) {
+//     loginShift.addEventListener("click", hideSignup);
+//   }
+
+//   if (logoutButton) {
+//     logoutButton.addEventListener("click", handleLogout);
+//   }
+
+//   if (signupButton) {
+//     signupButton.addEventListener("click", handleSignup);
+//   }
+
+//   if (currentUser && (currentUser.name || currentUser.email)) {
+//     headerUser.textContent = `Welcome, ${currentUser.name || currentUser.email}`;
+//   }
+// });
+
+
