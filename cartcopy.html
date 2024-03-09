@@ -19,14 +19,14 @@
     <title>Responsive e-commerce website - Crypticalcoder</title>
 </head>
 <body>
-    <video autoplay muted loop id="myVideo">
+    <!-- <video autoplay muted loop id="myVideo">
         <source src="assets/img/back.mp4" type="video/mp4">
-      </video>
+      </video> -->
     <!--=============== HEADER ===============-->
     <header class="header" id="header">
         <nav class="nav container">
             <a href="index.html" class="nav__logo">
-                <i class="bx bxs-shopping-bags nav_logo-icon"></i> e-shopper
+                <i class="bx bxs-shopping-bags nav_logo-icon"></i> FashionFusion
             </a>
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
@@ -94,126 +94,129 @@
     <!--=============== LOGIN ===============-->
     <div class="login" id="login">
         <i class="bx bx-x login__close" id="login-close"></i>
-        <h2 class="login__title-center" style="color: black; font-weight: bolder;">Login</h2>
+        <h2 class="login__title-center" style="color: black;">Login</h2>
         <form action="" class="login__form grid">
-            <div class="login__content">
-                <label for="" class="login__label">Email</label>
-                <input type="email" class="login__input">
-            </div>
-
-            <div class="login__content">
-                <label for="" class="login__label">Password</label>
-                <input type="password" class="login__input">
-            </div>
-            
-            <div>
-                <a href="a" class="button" style="background-color: red;  color: white;border-radius: 5px; padding: 16px 30px 16px 30px;">Sign in</a>
-            </div>
-            <div>
-                <p class="signup">Not a member? <a href="#" id="shift" style="color: red;">Sign up now </a></p>
-            </div>
+          <div class="login__content">
+            <label for="login-email" class="login__label">Email</label>
+            <input type="email" class="login__input" id="login-email">
+          </div>
+    
+          <div class="login__content">
+            <label for="login-password" class="login__label">Password</label>
+            <input type="password" class="login__input" id="login-password">
+          </div>
+    
+          <div>
+            <button id="buttonforlogin" class="button" style="background-color: red;color: white;padding: 15px 25px;border-radius: 5px;">Sign in </button> <span><button id="logout-button" style="border:solid 2px red; padding: 15px; border-radius: 7px;">Sign out</button></span>
+          </div>
+          <div>
+            <p class="signup">Not a member? <a href="#" id="shift" style="color: red;">Sign up now</a></p>
+          </div>
         </form>
-    </div>
-
-    <div class="create" id="create">
+      </div>
+      <div class="create" id="create">
         <i class="bx bx-x login__close" id="signup-close"></i>
-        <h2 class="login__title-center">Create Account</h2>
+        <h2 class="login__title-center" style="color: black;">Create Account</h2>
         <form action="" class="login__form grid">
-            <div class="login__content">
-                <label for="" class="login__label">Your Name</label>
-                <input type="text" class="login__input">
-            </div>
-
-
-            <div class="login__content">
-                <label for="" class="login__label">Email</label>
-                <input type="email" class="login__input">
-            </div>
-
-            <div class="login__content">
-                <label for="" class="login__label">Mobile No.</label>
-                <input type="number" class="login__input">
-            </div>
-
-            <div class="login__content">
-                <label for="" class="login__label">Password</label>
-                <input type="password" class="login__input">
-            </div>
-            <p style="margin-top: -20px; margin-left: 20px;"> Password must be atleast 6 characters.</p>
-            <p style="margin-left: 20px;"> To verify your number, we will send you a text message with a temporary code. Message and data rates may apply.</p>
-            <div>
-                <a href="a" class="button" style="color: white;">Sign up</a>
-            </div>
-            <div>
-                <p class="signup">Already have an account? <a href="#">Sign in  </a></p>
-            </div>
-            <p style="margin-left: 20px;">By creating an account, you agree to Amazon's Conditions of Use and Privacy Notice.</p>
+          <div class="login__content">
+            <label for="signup-name" class="login__label">Your Name</label>
+            <input type="text" class="login__input" id="signup-name">
+          </div>
+    
+          <div class="login__content">
+            <label for="signup-email" class="login__label">Email</label>
+            <input type="email" class="login__input" id="signup-email">
+          </div>
+    
+          <div class="login__content">
+            <label for="signup-mobile" class="login__label">Mobile No.</label>
+            <input type="number" class="login__input" id="signup-mobile">
+          </div>
+    
+          <div class="login__content">
+            <label for="signup-password" class="login__label">Password</label>
+            <input type="password" class="login__input" id="signup-password">
+          </div>
+         
+          <p style="margin-left: 20px;">To verify your number, we will send you a text message with a temporary code. Message and data rates may apply.</p>
+          <div>
+            <button id="signup-button" class="button" style="background-color: red;color: white; padding: 15px 25px;border-radius: 5px;">Sign up</button>
+          </div>
+          <div>
+            <p class="signup" style="color: black;">Already have an account? <a href="#" id="login-shift" style="color: red;">Sign in</a></p>
+          </div>
+          <p style="margin-left: 20px;">By creating an account, you agree to Amazon's Conditions of Use and Privacy Notice.</p>
         </form>
-    </div>
+      </div>
 
     <!--=============== MAIN ===============-->
     <h2 class="breadcrumb__title" style="font-size: 40px;color: black; "> Cart Page </h2>
     <h3 class="breadcrumb__subtitle" style="font-size: 17px;">Home > <span style="color: red;">Cart Page</span></h3>
         <!-- =============== CART =============== -->
+    <div class="container-fluid"; id="completed">
         
-            <div class="container-fluid">
-                <div class="row">
-                <div class="col-md-10 col-11 mx-auto">
+        <div class="row">
+            
+            <div class="col-md-10 col-11 mx-auto">
+                
                 <div class="row mt-5 gx-3">
                 <!-- left side div -->
-                <div class="col-md-12 col-lg-8 col-11 mx-auto main_cart mb-lg-0 mb-5 shadow">
-                <div class="card p-4">
-                <h2 class="py-4 font-weight-bold">Cart (2 items)</h2>
-                <div class="row">
-                <!-- cart images div -->
-                <div class="col-md-5 col-11 mx-auto bg-light d-flex justify-content-center align-items-center shadow product_img">
-                <img src="assets/img/cart-1.jpg" class="img-fluid" alt="cart img">
-                </div>   
-                <!-- cart product details -->
-                <div class="col-md-7 col-11 mx-auto px-4 mt-2">
-                <div class="row">
-                <!-- product name  -->
-                <div class="col-6 card-title">
-                <h1 class="mb-4 product_name">Blue Zara Shirt</h1>
-                <p class="mb-2">SHIRT - BLUE</p>
-                <p class="mb-2">COLOR: BLUE</p>
-                <p class="mb-3">SIZE: M</p>
-                </div>
-                <!-- quantity inc dec -->
-                <div class="col-6">
-                <ul class="pagination justify-content-end set_quantity">
-                <li class="page-item">
-                <button class="page-link " onclick="decreaseNumber('textbox','itemval')">
-                <i class="fas fa-minus"></i> </button>
-                </li>
-                <li class="page-item"><input type="text" name="" class="page-link" value="0" id="textbox" >
-                </li>
-                <li class="page-item">
-                <button class="page-link" onclick="increaseNumber('textbox','itemval')"> <i class="fas fa-plus"></i></button>
-                </li>
-                </ul>
-                </div>
-                </div>
-                <!-- //remover move and price -->
-                <div class="row">
-                <div class="col-8 d-flex justify-content-between remove_wish">
-                <p><i class="fas fa-trash-alt"></i> REMOVE ITEM</p>
-                <p><i class="fas fa-heart"></i>MOVE TO WISH LIST </p>
-                </div>
-                <div class="col-4 d-flex justify-content-end price_money">
-                <h3>$<span id="itemval">0.00 </span></h3>
-                </div>
-                </div>
-                </div>
-                </div>
-                </div>
+                
+                    <div class="col-md-12 col-lg-8 col-11 mx-auto main_cart mb-lg-0 mb-5 shadow" id="main_cart">
+                        
+                        <div class="card p-4 deleted" id="del1" >
+                            <h2 class="py-4 font-weight-bold">Cart (2 items)</h2>
+                                <div class="row">
+                                <!-- cart images div -->
+                                    <div class="col-md-5 col-11 mx-auto bg-light d-flex justify-content-center align-items-center shadow product_img">
+                                        <img src="assets/img/1.png" class="img-fluid" alt="cart img">
+                                    </div>   
+                                <!-- cart product details -->
+                                    <div class="col-md-7 col-11 mx-auto px-4 mt-2">
+                                        <div class="row">
+                                    <!-- product name  -->
+                                            <div class="col-6 card-title">
+                                                <h1 class="mb-4 product_name">Blue Zara Shirt</h1>
+                                                <p class="mb-2">SHIRT - BLUE</p>
+                                                <p class="mb-2">COLOR: BLUE</p>
+                                                <p class="mb-3">SIZE: M</p>
+                                            </div>
+                                    <!-- quantity inc dec -->
+                                            <div class="col-6">
+                                                <ul class="pagination justify-content-end set_quantity">
+                                                    <li class="page-item">
+                                                        <button class="page-link " onclick="decreaseNumber('textbox','itemval')">
+                                                            <i class="fas fa-minus"></i> 
+                                                        </button>
+                                                    </li>
+                                                    <li class="page-item"><input type="text" name="" class="page-link" value="1" id="textbox" >
+                                                    </li>
+                                                    <li class="page-item">
+                                                        <button class="page-link" onclick="increaseNumber('textbox','itemval')"> <i class="fas fa-plus"></i></button>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    <!-- //remover move and price -->
+                                        <div class="row">
+                                            <div class="col-8 d-flex justify-content-between remove_wish">
+                                                <p><i class="fas fa-trash-alt"></i> REMOVE ITEM</p>
+                                                <p><i class="fas fa-heart"></i>MOVE TO WISH LIST </p>
+                                            </div>
+                                            <div class="col-4 d-flex justify-content-end price_money">
+                                                <h3>$<span id="itemval">14.99 </span></h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
                 <hr/>
                 <!-- 2nd cart product -->
-                <div class="card p-4">
+                <div class="card p-4 deleted" id="del2" >
                 <div class="row">
                 <!-- cart images div -->
                 <div class="col-md-5 col-11 mx-auto bg-light d-flex justify-content-center align-items-center shadow product_img">
-                <img src="assets/img/cart-2-.png" class="img-fluid" alt="cart img">
+                <img src="assets/img/2.png" class="img-fluid" alt="cart img">
                 </div>
                 <!-- cart product details -->
                 <div class="col-md-7 col-11 mx-auto px-4 mt-2">
@@ -231,7 +234,7 @@
                 <li class="page-item">
                 <button class="page-link " onclick="decreaseNumber('textbox1','itemval1')"> <i class="fas fa-minus"></i> </button>
                 </li>
-                <li class="page-item"><input type="text" name="" class="page-link" value="0" id="textbox1" >
+                <li class="page-item"><input type="text" name="" class="page-link" value="1" id="textbox1" >
                 </li>
                 <li class="page-item">
                 <button class="page-link" onclick="increaseNumber('textbox1','itemval1')"> <i class="fas fa-plus"></i></button>
@@ -246,20 +249,21 @@
                 <p><i class="fas fa-heart"></i>MOVE TO WISH LIST </p>
                 </div>
                 <div class="col-4 d-flex justify-content-end price_money">
-                <h3>$<span id="itemval1">0.00 </span> </h3>
+                <h3>$<span id="itemval1">11.99 </span> </h3>
                 </div>
                 </div>
                 </div>
                 </div>
                 </div>
-                </div>
+
+                    </div>
                 <!-- right side div -->
                 <div class="col-md-12 col-lg-4 col-11 mx-auto mt-lg-0 mt-md-5">
                 <div class="right_side p-3 shadow bg-white">
                 <h2 class="product_name mb-5">The Total Amount Of</h2>
                 <div class="price_indiv d-flex justify-content-between">
                 <p>Product amount</p>
-                <p>$<span id="product_total_amt">0.00</span></p>
+                <p>$<span id="product_total_amt">26.98</span></p>
                 </div>
                 <div class="price_indiv d-flex justify-content-between">
                 <p>Shipping Charge</p>
@@ -268,9 +272,9 @@
                 <hr />
                 <div class="total-amt d-flex justify-content-between font-weight-bold">
                 <p>The total amount of (including VAT)</p>
-                <p>$<span id="total_cart_amt">0.00</span></p>
+                <p>$<span id="total_cart_amt">76.98</span></p>
                 </div>
-                <button class="btn btn-primary text-uppercase" style="background-color: red; border: none;">Checkout</button>
+                <button class="btn btn-primary text-uppercase " id="checkout" style="background-color: red; border: none;">Checkout</button>
                 </div>
                 <!-- discount code part -->
                 <div class="discount_code mt-3 shadow">
@@ -299,19 +303,114 @@
                 </div>
                 </div>
                 </div>
-                </div>
-                </div>
-                </div>
-        
-    
+            </div>
+        </div>
+    </div>
 
+    <h1 id="successful" style="text-align: center; margin-top: 50px;"> </h1>
+
+    <!-- checkout area  -->
+    <div id="showcheckout" style="display: none;">
+    <h2 class="breadcrumb__title" style="font-size: 40px;color: black; margin-top: 50px;margin-bottom: 50px;"> Checkout </h2>
+ 
+    <div class="checkout_area section-padding-80" style=" margin-left: -300px; ">
+        <div class="container" style=" font-size: 25px; ">
+            <div class="row">
+
+                <div class="col-md-6" style="width: 60%;   " >
+                    <div class="checkout_details_area mt-50 clearfix">
+
+                        <div class="cart-page-heading mb-30" style="margin-bottom: 20px;  ">
+                            <h3>Billing Address</h3>
+                        </div>
+
+                        <form action="#" method="post">
+                            <div class="row" style="color: black;">
+                                
+                                <div class="col-md-6 mb-3" >
+                                    <label for="first_name">First Name <span>*</span></label>
+                                    <input type="text" class="form-control" id="first_name" value="" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="last_name">Last Name <span>*</span></label>
+                                    <input type="text" class="form-control" id="last_name" value="" required>
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label for="company">Company Name</label>
+                                    <input type="text" class="form-control" id="company" value="">
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label for="country">Country <span>*</span></label>
+                                    <select class="w-100" id="country">
+                                        <option value="usa">United States</option>
+                                        <option value="uk">United Kingdom</option>
+                                        <option value="ger">Germany</option>
+                                        <option value="fra">France</option>
+                                        <option value="ind">India</option>
+                                        <option value="aus">Australia</option>
+                                        <option value="bra">Brazil</option>
+                                        <option value="cana">Canada</option>
+                                    </select>
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label for="street_address">Address <span>*</span></label>
+                                    <input type="text" class="form-control mb-3" id="street_address" value="">
+                                    <input type="text" class="form-control" id="street_address2" value="">
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label for="postcode">Postcode <span>*</span></label>
+                                    <input type="text" class="form-control" id="postcode" value="">
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label for="city">Town/City <span>*</span></label>
+                                    <input type="text" class="form-control" id="city" value="">
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label for="state">Province <span>*</span></label>
+                                    <input type="text" class="form-control" id="state" value="">
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label for="phone_number">Phone No <span>*</span></label>
+                                    <input type="number" class="form-control" id="phone_number" min="0" value="">
+                                </div>
+                                <div class="col-12 mb-4">
+                                    <label for="email_address">Email Address <span>*</span></label>
+                                    <input type="email" class="form-control" id="email_address" value="">
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="custom-control custom-checkbox d-block mb-2">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                        <label class="custom-control-label" for="customCheck1">Terms and conitions</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox d-block mb-2">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck2">
+                                        <label class="custom-control-label" for="customCheck2">Create an accout</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox d-block">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck3">
+                                        <label class="custom-control-label" for="customCheck3">Subscribe to our newsletter</label>
+                                    </div>
+                                    <button id="ordered" style="background-color: red;color: white; padding: 20px 30px; margin-top: 20px; font-size: 20px; border-radius: 5px; margin-left: 190px;">Place Order</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class=" col-md-6" style="width: 40%;  ">
+                    <img src="assets/img/checkout.jpg" alt="Image" style="  margin-left: 300px; height: 1000px;">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
     <!--=============== FOOTER ===============-->
     <footer class="footer section">
         <div class="footer__container container grid">
             <!-- FOOTER CONTENT 1 -->
             <div class="footer__content">
                 <a href="#" class="footer__logo">
-                    <i class="bx bxs-shopping-bags footer__logo-icon"></i>e-shopper
+                    <i class="bx bxs-shopping-bags footer__logo-icon"></i>Fashion-Fusion
                 </a>
 
                 <p class="footer__description">Enjoy the biggest sale <br> of your life.</p>

@@ -50,7 +50,7 @@ let products = [
         shop_subtitle: "Accessories",
         shop_price: 7.99,
         shop_discount: 14.99,
-        imageUri:"assets/img/5.webp",
+        imageUri:"assets/img/5.png" ,
         id : 5,
         types : "shirts",
         size : "M"
@@ -61,7 +61,7 @@ let products = [
         shop_subtitle: "Accessories",
         shop_price: 14.99,
         shop_discount: 29.99,
-        imageUri:"assets/img/6.webp",
+        imageUri:"assets/img/6.png",
         id : 6,
         types : "shirts",
         size : "L"
@@ -201,8 +201,6 @@ let products = [
     },
 ];
 
-
-
 // search functionaliyt 
 const searchButton = document.getElementById('searchicon');
     const searchBox = document.getElementById('searchbox');
@@ -235,11 +233,12 @@ function card(product) {
     shopContent.appendChild(shopTag);
 
     // Create img element with src "assets/img/4.png" and class "shop__img"
-var shopImg = document.createElement("img");
-shopImg.setAttribute("src", product.imageUri);
-shopImg.setAttribute("alt", "");
-shopImg.classList.add("shop__img");
-shopContent.appendChild(shopImg);
+    var shopImg = document.createElement("img");
+    shopImg.setAttribute("src", product.imageUri);
+    shopImg.setAttribute("alt", "");
+    shopImg.classList.add("shop__img");
+    shopImg.id="detailspage";
+    shopContent.appendChild(shopImg);
 
     // Create h3 element with class "shop__title" and text content from the product
     var shopTitle = document.createElement("h3");
@@ -274,8 +273,8 @@ shopContent.appendChild(shopImg);
     // Create a element with class "button shop__button" and href "details.html"
     var shopButton = document.createElement("a");
     shopButton.classList.add("button", "shop__button");
-    shopButton.setAttribute("href", "details.html");
-
+    shopButton.id = "realcart";
+    
     // Create i element with class "bx bx-cart-alt shop__icon"
     var shopIcon = document.createElement("i");
     shopIcon.classList.add("bx", "bx-cart-alt", "shop__icon");
@@ -286,35 +285,25 @@ shopContent.appendChild(shopImg);
     return shopContent;
 }
 
-
-
 function showProducts(products) {
     const shop__items = document.querySelector(".shop__items");
-   
-
     if(products.length === 0){
         const element = document.createElement('h1');
         element.textContent = 'No products found!';
-        element.style.cssText = "font-size : 50px; margin-left : 100px; width : 500px";
+        element.style.cssText = "font-size : 50px; margin-left : 100px; width : 500px; margin-top : 50px" ;
         shop__items.appendChild(element);
         return;
     }
-    
     products.forEach((product) => shop__items.appendChild(card(product)));
 }
 
-
 showProducts(products);
  
-
 // filter products 
 function renderProducts() {
-
     const selectedFilters = Array.from(document.querySelectorAll('.filter input:checked'))
     .map(checkbox => checkbox.parentNode.querySelector('p').textContent.trim());
-
     console.log(selectedFilters);
-
     // const filteredProductss = products.filter(product => selectedFilters.includes(product.shop_tag));
     const filteredProductss = products.filter(product => 
         {
@@ -322,19 +311,38 @@ function renderProducts() {
     });
     const shopItems = document.querySelector(".shop__items");
     shopItems.innerHTML = '';
-
     filteredProductss.forEach(product => {
         shopItems.appendChild(card(product));
-       
     });
-   
   }
-  
-
   // Attach event listeners to checkboxes
   const checkboxes = document.querySelectorAll('.filter input[type="checkbox"]');
   checkboxes.forEach(checkbox => {
     checkbox.addEventListener('change', renderProducts);
   });
 
+// cart real functiontiy 
+let count = 0;
+const countElement = document.getElementById('count');
+const increaseButtons = document.querySelectorAll('.shop__button');
 
+increaseButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    count++;
+    updateCount();
+  });
+});
+
+function updateCount() {
+  countElement.textContent = count;
+}
+
+// going to details page on clicking image 
+const pagedetails = document.querySelectorAll('.shop__img');
+    pagedetails.forEach(pagedetails =>{
+        pagedetails.addEventListener('click',()=>{
+            window.location.href = 'details.html';
+        })
+    })
+    
+  
