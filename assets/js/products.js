@@ -345,4 +345,3 @@ const pagedetails = document.querySelectorAll('.shop__img');
         })
     })
     
-  

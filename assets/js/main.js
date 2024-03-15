@@ -18,8 +18,9 @@ if(navToggle){
     navMenu.classList.add('show-menu')
   })
 }
-
-/*===== MENU HIDDEN =====*/
+                                      
+/*===== MENU HIDDEN =====*/               
+                                                                 
 /* Validate if constant exists */
 if(navClose){
   navClose.addEventListener("click",() =>{
@@ -39,7 +40,7 @@ const searchbar = document.getElementById('searchbox')
 if(loginButton){
   loginButton.addEventListener("click",() =>{
     login.classList.add('show-login')
-    
+  
   })
 }
 if(searchbutton){
@@ -108,8 +109,6 @@ function scrollUp(){
 window.addEventListener('scroll',scrollUp)
 
 
-/*=============== LIGHT BOX ===============*/
-
 
 /*=============== QUESTIONS ACCORDION ===============*/
 const accordionItem = document.querySelectorAll('.questions__item')
@@ -141,7 +140,7 @@ const toggleItem = (item) => {
   }
 }
 
-/*=============== STYLE SWITCHER ===============*/
+
 
 // realtime login 
 
@@ -259,6 +258,5 @@ if (currentUser) {
   headerUser.textContent = `Welcome, ${currentUser.name === undefined? "" : currentUser.name}`;
   console.log(headerUser);
 }
-
 });
 
