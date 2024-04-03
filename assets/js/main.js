@@ -157,7 +157,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const logoutButton = document.getElementById('logout-button');
   
   // Load users from localStorage or initialize an empty array if it doesn't exist
-  let users = JSON.parse(localStorage.getItem('users')) || [];
+  let users = JSON.parse(localStorage.getItem('users')) || [];                      //converting JSON strings into JavaScript objects:
   let currentUser = JSON.parse(localStorage.getItem('currentUser')) || {}; 
 
   function saveUser(name,email, password) {
@@ -198,7 +198,7 @@ document.addEventListener("DOMContentLoaded", function() {
    
     currentUser = user;
     
-    localStorage.setItem('currentUser', JSON.stringify(currentUser));
+    localStorage.setItem('currentUser', JSON.stringify(currentUser));          //converting  JavaScript objects into JSON strings
     headerUser.textContent = `Welcome, ${currentUser.name === undefined ? "" : currentUser.name}`;
     alert('Login successful');
     hideLogin();

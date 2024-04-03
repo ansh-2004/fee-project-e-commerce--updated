@@ -220,7 +220,8 @@ const searchButton = document.getElementById('searchicon');
             product.shop_tag.toLowerCase().includes(searchTerm) || product.shop_title.toLowerCase().includes(searchTerm) || product.shop_subtitle.toLowerCase().includes(searchTerm) || product.types.toLowerCase().includes(searchTerm) 
         );
         showProducts(filteredProducts);
-    });
+    }); 
+
 function card(product) {
     // Create div element with class "shop__content"
     var shopContent = document.createElement("div");
